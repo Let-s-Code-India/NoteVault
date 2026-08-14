@@ -1,0 +1,96 @@
+name: Build NoteVault
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Platform to build'
+        required: true
+        default: 'android'
+        type: choice
+        options:
+          - android
+          - ios
+          - desktop
+          - all
+
+jobs:
+  android:
+    if: github.event_name != 'workflow_dispatch' || inputs.platform == 'android' || inputs.platform == 'all'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build debug APK
+        run: gradle assembleDebug
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: notevault-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+
+  ios:
+    if: github.event_name == 'workflow_dispatch' && (inputs.platform == 'ios' || inputs.platform == 'all')
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build iOS framework/app
+        run: |
+          echo "This job requires the iOS Xcode project / KMP iOS target to exist in the codebase."
+          echo "Once that structure is added, replace this step with the actual build command, e.g.:"
+          echo "xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -configuration Release -sdk iphoneos build"
+
+  desktop:
+    if: github.event_name == 'workflow_dispatch' && (inputs.platform == 'desktop' || inputs.platform == 'all')
+    strategy:
+      matrix:
+        os: [ windows-latest, macos-latest, ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build desktop distributable
+        run: |
+          echo "This job requires the Compose Multiplatform desktop target to exist in the codebase."
+          echo "Once that structure is added, replace this step with, e.g.:"
+          echo "gradle packageDistributionForCurrentOS"
+
+      - name: Upload desktop artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: notevault-desktop-${{ matrix.os }}
+          path: app/build/compose/binaries/main/**
