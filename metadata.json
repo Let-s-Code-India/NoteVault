@@ -1,0 +1,6 @@
+{
+  "name": "NoteVault",
+  "description": "Offline-first notes & visual Logic Board diagram canvas for roadmaps, decision trees, and structured thinking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
