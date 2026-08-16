@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -44,7 +44,7 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
 
       - name: Create local.properties
         run: |
@@ -59,7 +59,7 @@ jobs:
             -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
         with:
           cache-disabled: true
 
@@ -76,7 +76,7 @@ jobs:
           ls -lh android-artifacts/
 
       - name: Upload Android APKs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: android-apk
           path: android-artifacts/*.apk
@@ -93,7 +93,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -113,9 +113,7 @@ jobs:
             -archivePath ios-artifacts/iosApp.xcarchive \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO \
-            CODE_SIGN_STYLE=Manual \
-            DEVELOPMENT_TEAM=""
+            CODE_SIGNING_ALLOWED=NO
 
       - name: Package unsigned IPA
         run: |
@@ -145,7 +143,7 @@ jobs:
           find ios-artifacts -maxdepth 1 -type f
 
       - name: Upload iOS IPA
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ios-ipa
           path: ios-artifacts/iosApp.ipa
@@ -164,7 +162,7 @@ jobs:
     steps:
       - name: Download Android APKs
         if: needs.build-android.result == 'success'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: android-apk
           path: final-release/android
@@ -173,7 +171,7 @@ jobs:
 
       - name: Download iOS IPA
         if: needs.build-ios.result == 'success'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: ios-ipa
           path: final-release/ios
@@ -186,7 +184,7 @@ jobs:
           find final-release -type f -exec ls -lh {} \;
 
       - name: Upload final release package
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: notevault-release-package
           path: final-release/
