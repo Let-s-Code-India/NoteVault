@@ -203,11 +203,11 @@ To enable this feature:
 
 ## 📝 Legal & Licensing
 
-**Copyright © 2026 LeCoThIn. All rights reserved.**
+**Copyright © 2026 LET'S CODE INDIA. All rights reserved.**
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-**Publisher/Organization**: Let's Code India
+**Publisher/Organization**: LET'S CODE INDIA
 
 ### Third-Party Libraries
 

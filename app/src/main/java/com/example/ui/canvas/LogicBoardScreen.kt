@@ -715,12 +715,12 @@ fun InteractiveCanvasEditor(
 
                         // 3. Add Shapes
                         IconButton(onClick = { showShapePickerSheet = true }) {
-                            Icon(Icons.Default.AddBox, contentDescription = "Add Shape Node", tint = MaterialTheme.colorScheme.primary)
+                            Icon(Icons.Outlined.AddBox, contentDescription = "Add Shape Node", tint = MaterialTheme.colorScheme.primary)
                         }
 
                         // 4. Add Sticky Note
                         IconButton(onClick = { showStickyPickerSheet = true }) {
-                            Icon(Icons.Default.StickyNote2, contentDescription = "Add Sticky Note", tint = Color(0xFFEAB308))
+                            Icon(Icons.AutoMirrored.Outlined.StickyNote2, contentDescription = "Add Sticky Note", tint = Color(0xFFEAB308))
                         }
 
                         // 5. Freehand Sketch Pen
@@ -1126,7 +1126,7 @@ fun InteractiveCanvasEditor(
                                     Icon(Icons.Default.Cloud, contentDescription = null, tint = Color.White.copy(alpha = 0.9f), modifier = Modifier.size(16.dp))
                                     Spacer(modifier = Modifier.height(2.dp))
                                 } else if (node.type == "DIAMOND") {
-                                    Icon(Icons.Default.AltRoute, contentDescription = null, tint = Color.White.copy(alpha = 0.9f), modifier = Modifier.size(16.dp))
+                                    Icon(Icons.AutoMirrored.Filled.AltRoute, contentDescription = null, tint = Color.White.copy(alpha = 0.9f), modifier = Modifier.size(16.dp))
                                     Spacer(modifier = Modifier.height(2.dp))
                                 }
 

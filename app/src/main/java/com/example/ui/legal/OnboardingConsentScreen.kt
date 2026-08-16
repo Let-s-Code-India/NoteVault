@@ -77,7 +77,7 @@ fun OnboardingConsentScreen(
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    "by Let's Code India",
+                    "by LET'S CODE INDIA",
                     style = MaterialTheme.typography.labelMedium,
                     color = MaterialTheme.colorScheme.outline,
                     textAlign = TextAlign.Center
@@ -187,7 +187,7 @@ fun OnboardingConsentScreen(
             }
 
             Text(
-                "© LeCoThIn",
+                "© LET'S CODE INDIA",
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.outline
             )

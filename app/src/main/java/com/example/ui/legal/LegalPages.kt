@@ -119,7 +119,7 @@ fun PrivacyPolicySection() {
             style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold)
         )
         Text(
-            text = "Published by Let's Code India | Platform: $platformDisplayName & Multiplatform",
+            text = "Published by LET'S CODE INDIA | Platform: $platformDisplayName & Multiplatform",
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.outline
         )
@@ -128,7 +128,7 @@ fun PrivacyPolicySection() {
 
         LegalParagraph(
             title = "1. Zero Telemetry & On-Device Data Storage",
-            content = "NoteVault, published by Let's Code India, is engineered on a strict zero-knowledge, offline-first paradigm. All notes, folders, tags, checklist tasks, logic board diagrams, design canvas compositions, and reminder schedules are stored exclusively on your local device storage. No user accounts, registration, analytics tracking, or telemetry mechanisms exist within NoteVault."
+            content = "NoteVault, published by LET'S CODE INDIA, is engineered on a strict zero-knowledge, offline-first paradigm. All notes, folders, tags, checklist tasks, logic board diagrams, design canvas compositions, and reminder schedules are stored exclusively on your local device storage. No user accounts, registration, analytics tracking, or telemetry mechanisms exist within NoteVault."
         )
 
         LegalParagraph(
@@ -148,12 +148,12 @@ fun PrivacyPolicySection() {
 
         LegalParagraph(
             title = "5. Data Retention, Backups & Contact",
-            content = "Because NoteVault does not maintain external cloud servers or databases, you retain 100% custody and control over your data. For any questions regarding privacy or data handling, contact Let's Code India directly at ayushgiri.25@icloud.com."
+            content = "Because NoteVault does not maintain external cloud servers or databases, you retain 100% custody and control over your data. For any questions regarding privacy or data handling, contact LET'S CODE INDIA directly at support@letscodeindia.in."
         )
 
         Spacer(modifier = Modifier.height(12.dp))
         Text(
-            "© LeCoThIn. All rights reserved.",
+            "© LET'S CODE INDIA. All rights reserved.",
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.outline
         )
@@ -168,7 +168,7 @@ fun TermsConditionsSection() {
             style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold)
         )
         Text(
-            text = "Published by Let's Code India | Effective: August 2026",
+            text = "Published by LET'S CODE INDIA | Effective: August 2026",
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.outline
         )
@@ -177,7 +177,7 @@ fun TermsConditionsSection() {
 
         LegalParagraph(
             title = "1. Acceptance of Terms",
-            content = "By downloading, installing, or using NoteVault on Android, iOS, Windows, macOS, or Linux, you agree to be bound by these Terms & Conditions provided by Let's Code India. If you do not agree, please discontinue use and uninstall the software."
+            content = "By downloading, installing, or using NoteVault on Android, iOS, Windows, macOS, or Linux, you agree to be bound by these Terms & Conditions provided by LET'S CODE INDIA. If you do not agree, please discontinue use and uninstall the software."
         )
 
         LegalParagraph(
@@ -187,17 +187,17 @@ fun TermsConditionsSection() {
 
         LegalParagraph(
             title = "3. User Responsibility for Backups",
-            content = "NoteVault functions as a local, on-device utility. You are solely responsible for creating regular offline backups (.zip archives or Markdown exports) of your data. Let's Code India and LeCoThIn shall not be liable for any data loss resulting from device failure, operating system updates, accidental deletion, or forgotten PINs."
+            content = "NoteVault functions as a local, on-device utility. You are solely responsible for creating regular offline backups (.zip archives or Markdown exports) of your data. LET'S CODE INDIA shall not be liable for any data loss resulting from device failure, operating system updates, accidental deletion, or forgotten PINs."
         )
 
         LegalParagraph(
             title = "4. Inquiries & Support",
-            content = "For support or terms inquiries, reach out to our team at ayushgiri.25@icloud.com."
+            content = "For support or terms inquiries, reach out to our team at support@letscodeindia.in."
         )
 
         Spacer(modifier = Modifier.height(12.dp))
         Text(
-            "© LeCoThIn. All rights reserved.",
+            "© LET'S CODE INDIA. All rights reserved.",
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.outline
         )
@@ -212,7 +212,7 @@ fun DisclaimerSection() {
             style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold)
         )
         Text(
-            text = "As-Is Warranty Provision | Let's Code India",
+            text = "As-Is Warranty Provision | LET'S CODE INDIA",
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.outline
         )
@@ -230,7 +230,7 @@ fun DisclaimerSection() {
                     color = MaterialTheme.colorScheme.error
                 )
                 Text(
-                    "THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS, PUBLISHERS (LET'S CODE INDIA), OR COPYRIGHT HOLDERS (LECOTHIN) BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+                    "THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR PUBLISHERS OF LET'S CODE INDIA BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
                     style = MaterialTheme.typography.bodySmall.copy(fontFamily = FontFamily.Monospace, lineHeight = 18.sp),
                     color = MaterialTheme.colorScheme.onSurface
                 )
@@ -353,7 +353,7 @@ fun AboutContactSection() {
                 ) {
                     Icon(Icons.Default.Business, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(18.dp))
                     Text(
-                        "Publisher: Let's Code India",
+                        "Publisher: LET'S CODE INDIA",
                         style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold)
                     )
                 }
@@ -372,7 +372,7 @@ fun AboutContactSection() {
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         Icon(Icons.Default.Email, contentDescription = null, modifier = Modifier.size(18.dp), tint = MaterialTheme.colorScheme.primary)
-                        Text("ayushgiri.25@icloud.com", style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold))
+                        Text("support@letscodeindia.in", style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold))
                     }
                 }
 
@@ -384,12 +384,12 @@ fun AboutContactSection() {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        "© LeCoThIn",
+                        "© LET'S CODE INDIA",
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.outline
                     )
                     Text(
-                        "Made by Let's Code India",
+                        "Powered by LET'S CODE INDIA",
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.primary
                     )

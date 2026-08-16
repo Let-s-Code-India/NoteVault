@@ -308,7 +308,7 @@ fun ReminderSchedulingSheet(
             }
 
             // Recurrence Configuration
-            Divider()
+            HorizontalDivider()
             Text("Recurrence / Repeat Rule", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold))
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 listOf("NONE" to "None", "DAILY" to "Daily", "WEEKLY" to "Weekly", "MONTHLY" to "Monthly", "CUSTOM_DAYS" to "Custom").forEach { (typeKey, typeLabel) ->
@@ -364,7 +364,7 @@ fun ReminderSchedulingSheet(
             }
 
             // Sound, Vibration, Snooze Settings
-            Divider()
+            HorizontalDivider()
             Text("Notification Polish", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold))
 
             Row(

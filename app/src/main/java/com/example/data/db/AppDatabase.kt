@@ -61,7 +61,7 @@ abstract class AppDatabase : RoomDatabase() {
                     "notevault_db"
                 )
                     .openHelperFactory(factory)
-                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigrationOnDowngrade(true)
                     .build()
             }
 

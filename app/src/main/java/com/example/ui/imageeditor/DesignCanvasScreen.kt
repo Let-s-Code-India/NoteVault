@@ -240,7 +240,7 @@ fun DesignCanvasScreen(
                     }
                     IconButton(onClick = { showAddStickyDialog = true }) {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            Icon(Icons.Default.StickyNote2, contentDescription = "Add Sticky", tint = MaterialTheme.colorScheme.primary)
+                            Icon(Icons.AutoMirrored.Filled.StickyNote2, contentDescription = "Add Sticky", tint = MaterialTheme.colorScheme.primary)
                             Text("Sticky", style = MaterialTheme.typography.labelSmall)
                         }
                     }

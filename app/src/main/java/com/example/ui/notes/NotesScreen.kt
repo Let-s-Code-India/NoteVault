@@ -15,6 +15,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.*
+import androidx.compose.material.icons.automirrored.outlined.*
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.material3.*
@@ -120,7 +122,7 @@ fun NotesScreen(viewModel: NoteVaultViewModel) {
                 HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp), color = MaterialTheme.colorScheme.outlineVariant)
 
                 NavigationDrawerItem(
-                    icon = { Icon(Icons.Default.Notes, contentDescription = null) },
+                    icon = { Icon(Icons.AutoMirrored.Filled.Notes, contentDescription = null) },
                     label = { 
                         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                             Text("All Notes", fontWeight = FontWeight.SemiBold)
@@ -215,7 +217,7 @@ fun NotesScreen(viewModel: NoteVaultViewModel) {
                     actions = {
                         IconButton(onClick = { viewModel.isGridView.value = !isGridView }) {
                             Icon(
-                                if (isGridView) Icons.Default.ViewList else Icons.Default.GridView,
+                                if (isGridView) Icons.AutoMirrored.Filled.ViewList else Icons.Outlined.GridView,
                                 contentDescription = "Toggle Grid/List View",
                                 tint = MaterialTheme.colorScheme.onSurface
                             )
@@ -359,7 +361,7 @@ fun NotesScreen(viewModel: NoteVaultViewModel) {
                                         when (currentViewMode) {
                                             "ARCHIVE" -> Icons.Outlined.Archive
                                             "TRASH" -> Icons.Outlined.Delete
-                                            else -> Icons.Outlined.NoteAdd
+                                            else -> Icons.AutoMirrored.Outlined.NoteAdd
                                         },
                                         contentDescription = null,
                                         modifier = Modifier.size(40.dp),

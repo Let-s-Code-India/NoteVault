@@ -11,6 +11,7 @@ import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.*
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -100,7 +101,7 @@ fun ImageEditorDialog(
                             currentBitmap = ImageProcessingUtils.rotateBitmap(currentBitmap, 90f)
                         }) {
                             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                Icon(Icons.Default.RotateRight, contentDescription = "Rotate")
+                                Icon(Icons.AutoMirrored.Filled.RotateRight, contentDescription = "Rotate")
                                 Text("Rotate", style = MaterialTheme.typography.labelSmall)
                             }
                         }
