@@ -148,32 +148,42 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Build iOS Framework
+      - name: List Xcode installations
         run: |
-          mkdir -p app/build/outputs/publish/ios
-          ./gradlew :app:buildFramework --stacktrace || true
-          find app/build/outputs -type f \( -name "*.framework" -o -name "*.xcarchive" -o -name "*.ipa" \) -exec cp -R {} app/build/outputs/publish/ios/ \; 2>/dev/null || true
-          find app/build/outputs/publish/ios -maxdepth 2 -type f | sed 's#^#/#' || true
-        continue-on-error: true
+          echo "Xcode installations found:"
+          ls -la /Applications | grep Xcode || true
+          xcode-select -p
+          xcodebuild -version
 
-      - name: Build iOS IPA (requires Xcode project)
+      - name: Build iOS App Archive
         run: |
           mkdir -p app/build/outputs/ipa app/build/outputs/publish/ios
-          if [ -d "iosApp" ] && [ -f "iosApp/iosApp.xcodeproj/project.pbxproj" ]; then
-            xcodebuild -project iosApp/iosApp.xcodeproj \
-              -scheme iosApp \
-              -configuration Release \
-              -sdk iphoneos \
-              -archivePath app/build/outputs/ipa/iosApp.xcarchive \
-              build || true
-            xcodebuild -exportArchive \
-              -archivePath app/build/outputs/ipa/iosApp.xcarchive \
-              -exportPath app/build/outputs/ipa \
-              -exportOptionsPlist iosApp/ExportOptions.plist || true
-          else
-            echo "No iOS Xcode project present; packaging the framework bundle only."
-          fi
+          echo "Building iOS app archive..."
+          xcodebuild archive \
+            -project iosApp/iosApp.xcodeproj \
+            -scheme iosApp \
+            -configuration Release \
+            -sdk iphoneos \
+            -archivePath app/build/outputs/ipa/iosApp.xcarchive \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+        continue-on-error: true
+
+      - name: Export iOS IPA
+        run: |
+          mkdir -p app/build/outputs/ipa app/build/outputs/publish/ios
+          echo "Exporting IPA..."
+          xcodebuild -exportArchive \
+            -archivePath app/build/outputs/ipa/iosApp.xcarchive \
+            -exportPath app/build/outputs/ipa/exports \
+            -exportOptionsPlist iosApp/ExportOptions.plist \
+            -allowProvisioningUpdates 2>&1 || true
+          
+          # Copy any generated IPA files
           find app/build/outputs/ipa -type f \( -name "*.ipa" -o -name "*.xcarchive" \) -exec cp -R {} app/build/outputs/publish/ios/ \; 2>/dev/null || true
+          ls -la app/build/outputs/ipa/ || true
+          ls -la app/build/outputs/publish/ios/ || true
         continue-on-error: true
 
       - name: Upload iOS Framework
