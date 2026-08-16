@@ -180,6 +180,26 @@ NoteVault/
 ./gradlew roborazzi
 ```
 
+### Building Without a Laptop (GitHub Actions)
+
+This repo builds itself on GitHub's servers — you don't need Android Studio, Xcode,
+or even a laptop. Everything below can be done from the GitHub app on your phone.
+
+1. Push any change to the `main` branch (or open the repo → **Actions** tab →
+   **Build NoteVault - Android & iOS** → **Run workflow**).
+2. GitHub spins up a Linux machine (for Android) and a macOS machine (for iOS) and
+   runs `.github/workflows/build-multiplatform.yml` on both.
+3. Open the workflow run → **Collect All Build Artifacts** job → scroll to
+   **Artifacts** at the bottom.
+4. Download `notevault-release-package` — it contains:
+   - `android/app-debug.apk` and `android/app-release.apk` — install directly on
+     an Android device.
+   - `ios/iosApp.ipa` — an **unsigned** iOS build. Re-sign it with a real Apple
+     Developer certificate (via Xcode, Sideloadly, AltStore, etc.) before
+     installing on a physical iPhone.
+
+No local build tools required — the whole pipeline runs in the cloud.
+
 ## 🔐 Security Features
 
 - **Biometric Authentication**: Fingerprint and face recognition support

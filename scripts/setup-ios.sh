@@ -104,7 +104,7 @@ cat > iosApp/iosApp.xcodeproj/project.pbxproj << 'EOF'
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B86B8D132C6F1B0000A5B4E1 /* Project object */ = {
+		B86B8D142C6F1B0000A5B4E1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
@@ -320,7 +320,7 @@ cat > iosApp/iosApp.xcodeproj/project.pbxproj << 'EOF'
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = B86B8D132C6F1B0000A5B4E1 /* Project object */;
+	rootObject = B86B8D142C6F1B0000A5B4E1 /* Project object */;
 }
 EOF
 

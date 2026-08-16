@@ -30,10 +30,10 @@ jobs:
     name: Build Android APK (Debug & Release)
     runs-on: ubuntu-latest
     if: github.event_name != 'workflow_dispatch' || inputs.platform == 'all' || inputs.platform == 'android'
-    
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -42,7 +42,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: ${{ env.JAVA_VERSION }}
-          cache: gradle
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
@@ -57,17 +56,18 @@ jobs:
           keytool -genkey -v -keystore debug.keystore \
             -storepass android -alias androiddebugkey \
             -keypass android -keyalg RSA -keysize 2048 \
-            -validity 10000 -dname "CN=Android Debug,O=Android,C=US" || true
+            -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-disabled: true
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace --no-daemon
+        run: ./gradlew assembleDebug --no-daemon
 
       - name: Build Release APK
-        run: ./gradlew assembleRelease --stacktrace --no-daemon
-        continue-on-error: true
+        run: ./gradlew assembleRelease --no-daemon
 
       - name: Prepare artifact directory
         run: |
@@ -76,7 +76,7 @@ jobs:
           ls -lh android-artifacts/
 
       - name: Upload Android APKs
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
           name: android-apk
           path: android-artifacts/*.apk
@@ -90,10 +90,10 @@ jobs:
     name: Build iOS IPA
     runs-on: macos-latest
     if: github.event_name != 'workflow_dispatch' || inputs.platform == 'all' || inputs.platform == 'ios'
-    
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -102,7 +102,7 @@ jobs:
           xcode-select -p
           xcodebuild -version
 
-      - name: Build iOS Archive
+      - name: Build iOS Archive (unsigned)
         run: |
           mkdir -p ios-artifacts
           xcodebuild archive \
@@ -114,101 +114,79 @@ jobs:
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
-            -allowProvisioningUpdates 2>&1 || echo "Archive build completed"
+            CODE_SIGN_STYLE=Manual \
+            DEVELOPMENT_TEAM=""
 
-      - name: Export iOS IPA
+      - name: Package unsigned IPA
         run: |
-          if [ -d "ios-artifacts/iosApp.xcarchive" ]; then
-            xcodebuild -exportArchive \
-              -archivePath ios-artifacts/iosApp.xcarchive \
-              -exportPath ios-artifacts/export \
-              -exportOptionsPlist iosApp/ExportOptions.plist \
-              -allowProvisioningUpdates 2>&1 || echo "Export completed"
-            
-            find ios-artifacts/export -name "*.ipa" -exec mv {} ios-artifacts/ \; 2>/dev/null || true
+          # xcodebuild -exportArchive requires an Apple Developer signing
+          # identity, which is not available on CI runners. Since the
+          # archive above is intentionally unsigned, we package the .app
+          # from the archive into a standard .ipa (Payload/*.app zip)
+          # ourselves. This IPA can be re-signed later with a real
+          # certificate before installing on a device or submitting to
+          # the App Store.
+          APP_PATH="ios-artifacts/iosApp.xcarchive/Products/Applications/iosApp.app"
+
+          if [ ! -d "$APP_PATH" ]; then
+            echo "::error::Expected app bundle not found at $APP_PATH"
+            find ios-artifacts/iosApp.xcarchive -maxdepth 4
+            exit 1
           fi
+
+          mkdir -p ios-artifacts/Payload
+          cp -R "$APP_PATH" ios-artifacts/Payload/
+          (cd ios-artifacts && zip -r -y iosApp.ipa Payload)
+          rm -rf ios-artifacts/Payload
 
       - name: List iOS artifacts
         run: |
           echo "=== iOS Build Artifacts ==="
-          find ios-artifacts -type f | head -20
+          find ios-artifacts -maxdepth 1 -type f
 
       - name: Upload iOS IPA
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
           name: ios-ipa
-          path: |
-            ios-artifacts/*.ipa
-            ios-artifacts/*.xcarchive
+          path: ios-artifacts/iosApp.ipa
           retention-days: 90
           overwrite: true
 
   # ====================
-  # Download All Artifacts
+  # Collect All Artifacts
   # ====================
   collect-artifacts:
     name: Collect All Build Artifacts
     runs-on: ubuntu-latest
-    needs: [build-android, build-ios]
-    if: always()
-    
+    needs: [ build-android, build-ios ]
+    if: always() && (needs.build-android.result == 'success' || needs.build-ios.result == 'success')
+
     steps:
       - name: Download Android APKs
-        uses: actions/download-artifact@v5
+        if: needs.build-android.result == 'success'
+        uses: actions/download-artifact@v4
         with:
           name: android-apk
           path: final-release/android
           run-id: ${{ github.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download iOS IPA
-        uses: actions/download-artifact@v5
+        if: needs.build-ios.result == 'success'
+        uses: actions/download-artifact@v4
         with:
           name: ios-ipa
           path: final-release/ios
           run-id: ${{ github.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: List all artifacts
         run: |
-          echo "=== NoteVault Build Artifacts ===" 
+          echo "=== NoteVault Build Artifacts ==="
           find final-release -type f -exec ls -lh {} \;
 
-      - name: Create README for artifacts
-        run: |
-          cat > final-release/README.md << 'EOF'
-          # NoteVault Application Artifacts
-          
-          ## Organization: LET'S CODE INDIA
-          
-          ### Android Builds
-          - **app-debug.apk** - Debug version for testing
-          - **app-release.apk** - Release version for distribution
-          - Minimum Android: API 24 (Android 7.0)
-          - Target Android: API 36 (Android 15)
-          
-          ### iOS Builds
-          - **iosApp.ipa** - iOS application for device installation
-          - **iosApp.xcarchive** - Archive for TestFlight/App Store submission
-          - Minimum iOS: 14.0
-          - Bundle ID: com.letscodeinda.notevault
-          
-          ## Installation Instructions
-          
-          ### Android
-          ```bash
-          adb install final-release/android/app-debug.apk
-          adb install final-release/android/app-release.apk
-          ```
-          
-          ### iOS
-          - Use Xcode or App Store Connect with xcarchive
-          - Or use AltStore/similar with IPA file
-          
-          ---
-          Repository: https://github.com/Let-s-Code-India/NoteVault
-          EOF
-
       - name: Upload final release package
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
           name: notevault-release-package
           path: final-release/
