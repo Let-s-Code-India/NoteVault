@@ -24,7 +24,7 @@ cat > iosApp/iosApp.xcodeproj/project.pbxproj << 'EOF'
 		B86B8D2C2C6F1B0000A5B4E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B8D2B2C6F1B0000A5B4E1 /* AppDelegate.swift */; };
 		B86B8D2E2C6F1B0000A5B4E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B8D2D2C6F1B0000A5B4E1 /* SceneDelegate.swift */; };
 		B86B8D302C6F1B0000A5B4E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B8D2F2C6F1B0000A5B4E1 /* ViewController.swift */; };
-		B86B8D332C6F1B0000A5B4E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B86B8D312C6F1B0000A5B4E1 /* Main.storyboard */; };
+		B86B8D332C6F1B0000A5B4E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B86B8D172C6F1B0000A5B4E1 /* Main.storyboard */; };
 		B86B8D352C6F1B0100A5B4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B86B8D342C6F1B0100A5B4E1 /* Assets.xcassets */; };
 		B86B8D382C6F1B0100A5B4E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B86B8D362C6F1B0100A5B4E1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -73,7 +73,7 @@ cat > iosApp/iosApp.xcodeproj/project.pbxproj << 'EOF'
 				B86B8D2B2C6F1B0000A5B4E1 /* AppDelegate.swift */,
 				B86B8D2D2C6F1B0000A5B4E1 /* SceneDelegate.swift */,
 				B86B8D2F2C6F1B0000A5B4E1 /* ViewController.swift */,
-				B86B8D312C6F1B0000A5B4E1 /* Main.storyboard */,
+				B86B8D172C6F1B0000A5B4E1 /* Main.storyboard */,
 				B86B8D342C6F1B0100A5B4E1 /* Assets.xcassets */,
 				B86B8D362C6F1B0100A5B4E1 /* LaunchScreen.storyboard */,
 				B86B8D392C6F1B0100A5B4E1 /* Info.plist */,
@@ -84,13 +84,13 @@ cat > iosApp/iosApp.xcodeproj/project.pbxproj << 'EOF'
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B86B8D1E2C6F1B0000A5B4E1 /* iosApp */ = {
+		B86B8D152C6F1B0000A5B4E1 /* iosApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B86B8D3C2C6F1B0100A5B4E1 /* Build configuration list for PBXNativeTarget "iosApp" */;
 			buildPhases = (
 				B86B8D1B2C6F1B0000A5B4E1 /* Sources */,
 				B86B8D1C2C6F1B0000A5B4E1 /* Frameworks */,
-				B86B8D1D2C6F1B0000A5B4E1 /* Resources */,
+				B86B8D182C6F1B0000A5B4E1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -111,7 +111,7 @@ cat > iosApp/iosApp.xcodeproj/project.pbxproj << 'EOF'
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					B86B8D1E2C6F1B0000A5B4E1 = {
+					B86B8D152C6F1B0000A5B4E1 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -129,13 +129,13 @@ cat > iosApp/iosApp.xcodeproj/project.pbxproj << 'EOF'
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B86B8D1E2C6F1B0000A5B4E1 /* iosApp */,
+				B86B8D152C6F1B0000A5B4E1 /* iosApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B86B8D1D2C6F1B0000A5B4E1 /* Resources */ = {
+		B86B8D182C6F1B0000A5B4E1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -161,10 +161,10 @@ cat > iosApp/iosApp.xcodeproj/project.pbxproj << 'EOF'
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B86B8D312C6F1B0000A5B4E1 /* Main.storyboard */ = {
+		B86B8D172C6F1B0000A5B4E1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B86B8D322C6F1B0000A5B4E1 /* Base */,
+				B86B8D312C6F1B0000A5B4E1 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
