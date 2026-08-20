@@ -137,17 +137,12 @@ fun PrivacyPolicySection() {
         )
 
         LegalParagraph(
-            title = "3. Optional Generative AI Diagram Feature",
-            content = "NoteVault includes an optional AI-assisted diagram generation feature. When and ONLY when you explicitly type a prompt and press 'Generate AI Diagram', that specific prompt string is transmitted to a third-party generative AI API solely to generate node & connection metadata. No existing notes, vault contents, or personal identifiers are attached or transmitted. If you do not use this button, zero network data is ever transmitted."
-        )
-
-        LegalParagraph(
-            title = "4. System Permissions Policy",
+            title = "3. System Permissions Policy",
             content = "NoteVault only requests system permissions strictly necessary for user-initiated device features (such as notifications for scheduled reminders, camera for photo capture, and biometric sensors for PIN-less unlock). All permissions are handled natively and remain entirely local."
         )
 
         LegalParagraph(
-            title = "5. Data Retention, Backups & Contact",
+            title = "4. Data Retention, Backups & Contact",
             content = "Because NoteVault does not maintain external cloud servers or databases, you retain 100% custody and control over your data. For any questions regarding privacy or data handling, contact LET'S CODE INDIA directly at support@letscodeindia.in."
         )
 

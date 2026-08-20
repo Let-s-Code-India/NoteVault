@@ -401,24 +401,24 @@ class NoteVaultRepository(private val context: Context) {
 
         when (templateType) {
             "DECISION_TREE" -> {
-                val n1 = DiagramNode(id = "dt_1", type = "CIRCLE", label = "User Request", subText = "Incoming Prompt", x = 100f, y = 200f, colorHex = "#10B981")
-                val n2 = DiagramNode(id = "dt_2", type = "DIAMOND", label = "Contains Code / STEM?", subText = "Reasoning Level Required", x = 340f, y = 185f, colorHex = "#F59E0B")
-                val n3 = DiagramNode(id = "dt_3", type = "ROUNDED_CARD", label = "fast-response-model", subText = "Fast, lightweight response", x = 600f, y = 100f, colorHex = "#3B82F6")
-                val n4 = DiagramNode(id = "dt_4", type = "ROUNDED_CARD", label = "deep-reasoning-model", subText = "Deep reasoning & analysis", x = 600f, y = 280f, colorHex = "#8B5CF6")
-                val n5 = DiagramNode(id = "dt_5", type = "OUTCOME", label = "Stream to Compose UI", subText = "Cache in Room DB", x = 860f, y = 190f, colorHex = "#84CC16")
+                val n1 = DiagramNode(id = "dt_1", type = "CIRCLE", label = "New Task Added", subText = "User creates a task", x = 100f, y = 200f, colorHex = "#10B981")
+                val n2 = DiagramNode(id = "dt_2", type = "DIAMOND", label = "Due within 24 hours?", subText = "Priority check", x = 340f, y = 185f, colorHex = "#F59E0B")
+                val n3 = DiagramNode(id = "dt_3", type = "ROUNDED_CARD", label = "Mark Urgent", subText = "Pinned to top of list", x = 600f, y = 100f, colorHex = "#3B82F6")
+                val n4 = DiagramNode(id = "dt_4", type = "ROUNDED_CARD", label = "Mark Normal", subText = "Sorted by due date", x = 600f, y = 280f, colorHex = "#8B5CF6")
+                val n5 = DiagramNode(id = "dt_5", type = "OUTCOME", label = "Saved to Local DB", subText = "Indexed for search", x = 860f, y = 190f, colorHex = "#84CC16")
 
                 nodes.addAll(listOf(n1, n2, n3, n4, n5))
-                edges.add(DiagramEdge(fromNodeId = n1.id, toNodeId = n2.id, label = "Pass prompt", lineStyle = "ORTHOGONAL"))
-                edges.add(DiagramEdge(fromNodeId = n2.id, toNodeId = n3.id, label = "Simple / General", lineStyle = "ORTHOGONAL", colorHex = "#3B82F6"))
-                edges.add(DiagramEdge(fromNodeId = n2.id, toNodeId = n4.id, label = "Complex / Coding", lineStyle = "ORTHOGONAL", colorHex = "#8B5CF6"))
-                edges.add(DiagramEdge(fromNodeId = n3.id, toNodeId = n5.id, label = "Tokens returned", lineStyle = "ORTHOGONAL"))
-                edges.add(DiagramEdge(fromNodeId = n4.id, toNodeId = n5.id, label = "Tokens returned", lineStyle = "ORTHOGONAL"))
+                edges.add(DiagramEdge(fromNodeId = n1.id, toNodeId = n2.id, label = "Check due date", lineStyle = "ORTHOGONAL"))
+                edges.add(DiagramEdge(fromNodeId = n2.id, toNodeId = n3.id, label = "Yes", lineStyle = "ORTHOGONAL", colorHex = "#3B82F6"))
+                edges.add(DiagramEdge(fromNodeId = n2.id, toNodeId = n4.id, label = "No", lineStyle = "ORTHOGONAL", colorHex = "#8B5CF6"))
+                edges.add(DiagramEdge(fromNodeId = n3.id, toNodeId = n5.id, label = "Saved", lineStyle = "ORTHOGONAL"))
+                edges.add(DiagramEdge(fromNodeId = n4.id, toNodeId = n5.id, label = "Saved", lineStyle = "ORTHOGONAL"))
             }
             "ROADMAP" -> {
                 val r1 = DiagramNode(id = "rm_1", type = "ROUNDED_CARD", label = "Phase 1: Kotlin & Coroutines", subText = "Flow, StateFlow, CoroutineScope", x = 100f, y = 150f, colorHex = "#6366F1")
                 val r2 = DiagramNode(id = "rm_2", type = "ROUNDED_CARD", label = "Phase 2: Jetpack Compose", subText = "Material 3, Canvas, Touch Gestures", x = 340f, y = 150f, colorHex = "#06B6D4")
                 val r3 = DiagramNode(id = "rm_3", type = "ROUNDED_CARD", label = "Phase 3: Room Database", subText = "KSP, Entities, DAOs, Migrations", x = 580f, y = 150f, colorHex = "#10B981")
-                val r4 = DiagramNode(id = "rm_4", type = "ROUNDED_CARD", label = "Phase 4: Generative AI REST API", subText = "Multimodal AI & Logic Generation", x = 820f, y = 150f, colorHex = "#EC4899")
+                val r4 = DiagramNode(id = "rm_4", type = "ROUNDED_CARD", label = "Phase 4: Local Template Engine", subText = "Offline diagram generation, zero network", x = 820f, y = 150f, colorHex = "#EC4899")
 
                 nodes.addAll(listOf(r1, r2, r3, r4))
                 edges.add(DiagramEdge(fromNodeId = r1.id, toNodeId = r2.id, label = "Next", lineStyle = "STRAIGHT"))

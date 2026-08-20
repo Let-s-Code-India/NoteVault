@@ -185,15 +185,9 @@ class ReminderReceiver : BroadcastReceiver() {
             }
         }
 
-        val iconRes = when (reminder.targetType) {
-            "NOTE" -> android.R.drawable.ic_menu_edit
-            "TASK" -> android.R.drawable.checkbox_on_background
-            "TAG_DIGEST" -> android.R.drawable.ic_menu_agenda
-            else -> android.R.drawable.ic_dialog_info
-        }
-
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(iconRes)
+            .setSmallIcon(com.example.R.drawable.ic_notification)
+            .setColor(0xFF6366F1.toInt())
             .setContentTitle("⏰ " + reminder.title)
             .setContentText(if (bodyText.isNotBlank()) bodyText else "Scheduled local reminder")
             .setStyle(NotificationCompat.BigTextStyle().bigText(if (bodyText.isNotBlank()) bodyText else reminder.title))
@@ -220,7 +214,8 @@ class ReminderReceiver : BroadcastReceiver() {
         }
 
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.ic_dialog_info)
+            .setSmallIcon(com.example.R.drawable.ic_notification)
+            .setColor(0xFF6366F1.toInt())
             .setContentTitle("📝 Local Reminder")
             .setContentText(title)
             .setPriority(NotificationCompat.PRIORITY_HIGH)

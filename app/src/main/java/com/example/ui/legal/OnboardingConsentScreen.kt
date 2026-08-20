@@ -114,12 +114,6 @@ fun OnboardingConsentScreen(
                         title = "Encrypted at Rest",
                         description = "AES-256 local database encryption with salted SHA-256 PIN hashing and biometric secure enclave unlock."
                     )
-
-                    GuaranteeItem(
-                        icon = Icons.Default.AutoAwesome,
-                        title = "Optional Generative AI",
-                        description = "The AI diagram feature only contacts the network when you explicitly click 'Generate AI Diagram'. Never in the background."
-                    )
                 }
             }
 

@@ -5,7 +5,6 @@ import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.data.model.*
-import com.example.data.repository.AiDiagramService
 import com.example.data.repository.NoteVaultRepository
 import com.example.data.repository.SearchResult
 import com.example.data.security.SecurityManager
@@ -34,7 +33,6 @@ enum class AppNavDestination {
 
 class NoteVaultViewModel(application: Application) : AndroidViewModel(application) {
     val repository = NoteVaultRepository(application)
-    private val aiDiagramService = AiDiagramService()
     val platformSettings: PlatformSettings = createPlatformSettings()
     val permissionManager: PermissionManager = createPermissionManager()
 
@@ -98,7 +96,6 @@ class NoteVaultViewModel(application: Application) : AndroidViewModel(applicatio
 
     // Sync status & UI Feedback
     val syncStatus = MutableStateFlow("100% Local Encrypted Database (SQLCipher)")
-    val isGeneratingAiDiagram = MutableStateFlow(false)
     val userNotification = MutableStateFlow<String?>(null)
 
     // Security
@@ -369,30 +366,6 @@ class NoteVaultViewModel(application: Application) : AndroidViewModel(applicatio
                 _currentDestination.value = AppNavDestination.LOGIC_BOARD
             }
             userNotification.value = "Diagram deleted"
-        }
-    }
-
-    fun generateAiDiagram(prompt: String) {
-        if (prompt.isBlank()) return
-        viewModelScope.launch {
-            isGeneratingAiDiagram.value = true
-            userNotification.value = "Generating diagram from AI..."
-            val result = aiDiagramService.generateDiagramFromPrompt(prompt)
-
-            val newDiagram = DiagramEntity(
-                title = result.title,
-                description = result.description,
-                templateType = "DECISION_TREE",
-                noteId = _activeNote.value?.id,
-                nodesJson = repository.serializeNodes(result.nodes),
-                edgesJson = repository.serializeEdges(result.edges)
-            )
-
-            repository.saveDiagram(newDiagram)
-            _activeDiagram.value = newDiagram
-            isGeneratingAiDiagram.value = false
-            _currentDestination.value = AppNavDestination.CANVAS_EDIT
-            userNotification.value = "Diagram generated!"
         }
     }
 

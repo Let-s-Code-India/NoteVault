@@ -6,23 +6,107 @@
 	objectVersion = 56;
 	objects = {
 /* Begin PBXBuildFile section */
-		B86B8D2C2C6F1B0000A5B4E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B8D2B2C6F1B0000A5B4E1 /* AppDelegate.swift */; };
-		B86B8D2E2C6F1B0000A5B4E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B8D2D2C6F1B0000A5B4E1 /* SceneDelegate.swift */; };
-		B86B8D302C6F1B0000A5B4E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B8D2F2C6F1B0000A5B4E1 /* ViewController.swift */; };
-		B86B8D332C6F1B0000A5B4E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B86B8D172C6F1B0000A5B4E1 /* Main.storyboard */; };
 		B86B8D352C6F1B0100A5B4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B86B8D342C6F1B0100A5B4E1 /* Assets.xcassets */; };
 		B86B8D382C6F1B0100A5B4E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B86B8D362C6F1B0100A5B4E1 /* LaunchScreen.storyboard */; };
+		17F5D883139220E029082BA7 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D7C59FB0C423AF79AE2E7A /* AppState.swift */; };
+		BB431ABCB7CDCF08E6CB3A6C /* NoteVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4450338B493602EA72113C /* NoteVaultApp.swift */; };
+		BFAFD76C52F1FFF8937DD86D /* LocalDiagramGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DD45F5160E3F4174322265 /* LocalDiagramGenerator.swift */; };
+		96D4F73D24B7AADB40C26E3C /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F1429C73191867FC9AB115 /* Color+Theme.swift */; };
+		DA848CB08E0B10A7ECB6AC02 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005D79E4CE44F6387FC291DE /* Date+Formatting.swift */; };
+		CE33B68C4F590F5D0817D49C /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40AC0BEC6CFAE47B97E9AC6 /* NotificationManager.swift */; };
+		F9439D28907821B093CD7AF1 /* BiometricAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A451AC3B6E61D5FF2A46A99 /* BiometricAuthManager.swift */; };
+		1EC7B938A0939DAD4BC71B04 /* EncryptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4C00596265E7CE6DB2A36 /* EncryptionManager.swift */; };
+		1E4276DC243A1A7C99354B21 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC615E30FF3022C332ECBB7F /* KeychainService.swift */; };
+		E95F661742073FB108B93DB5 /* DiagramTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A137EB38644A02172D04DA1C /* DiagramTemplate.swift */; };
+		75B1E50EC8901C4CED2D0C42 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC67ED7012B1E93F9CA6703 /* Folder.swift */; };
+		E62E9B7F7A683DC94A382529 /* LogicBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F388F40E35B195B06DA9D2 /* LogicBoard.swift */; };
+		1B9266443E1D4F92D6F9FF58 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E2825A2CEA80B8FF99F0 /* Note.swift */; };
+		72C2EAB51F6ED8F1CA994BED /* SecuritySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D496E2C5AF1CF681C97BCA8F /* SecuritySettings.swift */; };
+		A9B779838305240B33B81FFB /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25910AA7944E4BB0C708C73D /* Tag.swift */; };
+		5F4A51DC98BC4367797514C0 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC28397117F2B5D2BF174BA /* TaskItem.swift */; };
+		30F0067CE78A1F331FA29232 /* CoreDataEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF3F81B381445623DB2C04 /* CoreDataEntities.swift */; };
+		981DEC1BAAAA9E6C0CAC1F0F /* NoteVaultDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250CC146CB514278F0FFABBF /* NoteVaultDAO.swift */; };
+		92D1EBB6722B027380CC21D4 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FBA7E264DE582C654A9F2B /* PersistenceController.swift */; };
+		FA419F711A54C01F58F5F66F /* FolderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8661061DBF04DBDB4ED8C1 /* FolderRepository.swift */; };
+		2DC8AB798DF5EB91FB31289C /* LogicBoardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3AF0D14F1ED53133B5E4B /* LogicBoardRepository.swift */; };
+		F633EA0232B73C19CB2AF33B /* NoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A795A6AD5D307BFB4C56909 /* NoteRepository.swift */; };
+		A2BA364D8741385F72BE9FEB /* TagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48FE97B1C4511F8DC978385 /* TagRepository.swift */; };
+		AB765E32FE66B3E572819453 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A9FE73EE3DCA7525451640 /* TaskRepository.swift */; };
+		F07DA6BB2389ED5883EBF59B /* FoldersTagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460444B889FDFCE75C3F01B9 /* FoldersTagsViewModel.swift */; };
+		01DAD2DA18718B1CDC92C281 /* LogicBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6203FE7B7F0C0B0C7F10BE /* LogicBoardViewModel.swift */; };
+		F48DECD608623314C65D113A /* NoteEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973805E0B5453B1FFA54A98 /* NoteEditorViewModel.swift */; };
+		977F02E41DEE435CC72960E1 /* NotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22B25D7B6906B41C561CD7 /* NotesListViewModel.swift */; };
+		B988701421767A14E2126175 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243B8B6451F7AC9797A1C766 /* SearchViewModel.swift */; };
+		13DEE52B1B212839267F8C6F /* SecurityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE46B65F367C8295A64D55D /* SecurityViewModel.swift */; };
+		81399A7F3367058E348BA354 /* TasksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7780C2061558FC478FA0767 /* TasksViewModel.swift */; };
+		3E7E501DAEEDD87E0EC6E880 /* FolderSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D910C2E429B508D928AE6F /* FolderSidebarView.swift */; };
+		A331B26DE1DAB3ED5248F9B5 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCAB47A3B34BA5C4DCED3DD /* TagCloudView.swift */; };
+		98C7DA5E5F599554E13E5BD4 /* DiagramConnectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA02D80F51A36F88683249 /* DiagramConnectorView.swift */; };
+		70307F758C6D82A47154666E /* DiagramNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2DFAD6656992ED8263DEEB /* DiagramNodeView.swift */; };
+		FB5C1A2A6359F6D6DC59DD78 /* LogicBoardCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C6709DEBC5EF5A00DC9F3 /* LogicBoardCanvasView.swift */; };
+		487F8E966B442C1520A7548A /* TemplatePickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73700285F38769C44CF58CEA /* TemplatePickerSheet.swift */; };
+		533F465FE03BAA3679A85FE8 /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F1BD063ED02A22D8983E3 /* MainNavigationView.swift */; };
+		A69617CA1A65FF03C37FD44C /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F9C3E217E07FFD6309BBEB /* NoteCardView.swift */; };
+		B9761852F1EC51B0306166B8 /* NoteEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B7B2CE50DC716DF806144 /* NoteEditorView.swift */; };
+		C1C7A62D7B2645B89A848B66 /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000279E756628F46C2B48A8 /* NotesListView.swift */; };
+		0FFF8EE0B81F877C736E4B6B /* GlobalSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257E82DBC5786A9808C6894 /* GlobalSearchView.swift */; };
+		422D382CD896B2F7CB608EFE /* AppLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EC26CB4BFC184C1BED6A6 /* AppLockView.swift */; };
+		F20BE6A529BCAE6A91F95E98 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC56FD0063552B11333975 /* SettingsView.swift */; };
+		5455ABBF19B907BBFB3A9D51 /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0568CAA607667940A5C0FFD /* TaskRowView.swift */; };
+		23225CA7EAD39E8F820A3566 /* TasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A79E3C2F01A224B89F2FE2 /* TasksListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B86B8D1F2C6F1B0000A5B4E1 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B86B8D2B2C6F1B0000A5B4E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B86B8D2D2C6F1B0000A5B4E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B86B8D2F2C6F1B0000A5B4E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B86B8D312C6F1B0000A5B4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B86B8D342C6F1B0100A5B4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B86B8D372C6F1B0100A5B4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B86B8D392C6F1B0100A5B4E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20D7C59FB0C423AF79AE2E7A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState.swift"; sourceTree = "<group>"; };
+		3C4450338B493602EA72113C /* NoteVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVaultApp.swift"; sourceTree = "<group>"; };
+		C2DD45F5160E3F4174322265 /* LocalDiagramGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diagrams/LocalDiagramGenerator.swift"; sourceTree = "<group>"; };
+		24F1429C73191867FC9AB115 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions/Color+Theme.swift"; sourceTree = "<group>"; };
+		005D79E4CE44F6387FC291DE /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions/Date+Formatting.swift"; sourceTree = "<group>"; };
+		C40AC0BEC6CFAE47B97E9AC6 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications/NotificationManager.swift"; sourceTree = "<group>"; };
+		8A451AC3B6E61D5FF2A46A99 /* BiometricAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Security/BiometricAuthManager.swift"; sourceTree = "<group>"; };
+		38D4C00596265E7CE6DB2A36 /* EncryptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Security/EncryptionManager.swift"; sourceTree = "<group>"; };
+		AC615E30FF3022C332ECBB7F /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Security/KeychainService.swift"; sourceTree = "<group>"; };
+		A137EB38644A02172D04DA1C /* DiagramTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain/DiagramTemplate.swift"; sourceTree = "<group>"; };
+		6BC67ED7012B1E93F9CA6703 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain/Folder.swift"; sourceTree = "<group>"; };
+		73F388F40E35B195B06DA9D2 /* LogicBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain/LogicBoard.swift"; sourceTree = "<group>"; };
+		9624E2825A2CEA80B8FF99F0 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain/Note.swift"; sourceTree = "<group>"; };
+		D496E2C5AF1CF681C97BCA8F /* SecuritySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain/SecuritySettings.swift"; sourceTree = "<group>"; };
+		25910AA7944E4BB0C708C73D /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain/Tag.swift"; sourceTree = "<group>"; };
+		1EC28397117F2B5D2BF174BA /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain/TaskItem.swift"; sourceTree = "<group>"; };
+		88AF3F81B381445623DB2C04 /* CoreDataEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataEntities.swift"; sourceTree = "<group>"; };
+		250CC146CB514278F0FFABBF /* NoteVaultDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVaultDAO.swift"; sourceTree = "<group>"; };
+		50FBA7E264DE582C654A9F2B /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistenceController.swift"; sourceTree = "<group>"; };
+		6C8661061DBF04DBDB4ED8C1 /* FolderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FolderRepository.swift"; sourceTree = "<group>"; };
+		D9A3AF0D14F1ED53133B5E4B /* LogicBoardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogicBoardRepository.swift"; sourceTree = "<group>"; };
+		7A795A6AD5D307BFB4C56909 /* NoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteRepository.swift"; sourceTree = "<group>"; };
+		B48FE97B1C4511F8DC978385 /* TagRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagRepository.swift"; sourceTree = "<group>"; };
+		16A9FE73EE3DCA7525451640 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskRepository.swift"; sourceTree = "<group>"; };
+		460444B889FDFCE75C3F01B9 /* FoldersTagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoldersTagsViewModel.swift"; sourceTree = "<group>"; };
+		1F6203FE7B7F0C0B0C7F10BE /* LogicBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogicBoardViewModel.swift"; sourceTree = "<group>"; };
+		5973805E0B5453B1FFA54A98 /* NoteEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteEditorViewModel.swift"; sourceTree = "<group>"; };
+		4D22B25D7B6906B41C561CD7 /* NotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesListViewModel.swift"; sourceTree = "<group>"; };
+		243B8B6451F7AC9797A1C766 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewModel.swift"; sourceTree = "<group>"; };
+		5BE46B65F367C8295A64D55D /* SecurityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecurityViewModel.swift"; sourceTree = "<group>"; };
+		D7780C2061558FC478FA0767 /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksViewModel.swift"; sourceTree = "<group>"; };
+		49D910C2E429B508D928AE6F /* FolderSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoldersAndTags/FolderSidebarView.swift"; sourceTree = "<group>"; };
+		4DCAB47A3B34BA5C4DCED3DD /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoldersAndTags/TagCloudView.swift"; sourceTree = "<group>"; };
+		F4CA02D80F51A36F88683249 /* DiagramConnectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogicBoard/DiagramConnectorView.swift"; sourceTree = "<group>"; };
+		4D2DFAD6656992ED8263DEEB /* DiagramNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogicBoard/DiagramNodeView.swift"; sourceTree = "<group>"; };
+		E97C6709DEBC5EF5A00DC9F3 /* LogicBoardCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogicBoard/LogicBoardCanvasView.swift"; sourceTree = "<group>"; };
+		73700285F38769C44CF58CEA /* TemplatePickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogicBoard/TemplatePickerSheet.swift"; sourceTree = "<group>"; };
+		992F1BD063ED02A22D8983E3 /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation/MainNavigationView.swift"; sourceTree = "<group>"; };
+		45F9C3E217E07FFD6309BBEB /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes/NoteCardView.swift"; sourceTree = "<group>"; };
+		3F5B7B2CE50DC716DF806144 /* NoteEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes/NoteEditorView.swift"; sourceTree = "<group>"; };
+		F000279E756628F46C2B48A8 /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes/NotesListView.swift"; sourceTree = "<group>"; };
+		2257E82DBC5786A9808C6894 /* GlobalSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search/GlobalSearchView.swift"; sourceTree = "<group>"; };
+		495EC26CB4BFC184C1BED6A6 /* AppLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Security/AppLockView.swift"; sourceTree = "<group>"; };
+		AFAC56FD0063552B11333975 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Security/SettingsView.swift"; sourceTree = "<group>"; };
+		D0568CAA607667940A5C0FFD /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks/TaskRowView.swift"; sourceTree = "<group>"; };
+		21A79E3C2F01A224B89F2FE2 /* TasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks/TasksListView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,15 +139,119 @@
 		B86B8D1E2C6F1B0000A5B4E1 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				B86B8D2B2C6F1B0000A5B4E1 /* AppDelegate.swift */,
-				B86B8D2D2C6F1B0000A5B4E1 /* SceneDelegate.swift */,
-				B86B8D2F2C6F1B0000A5B4E1 /* ViewController.swift */,
-				B86B8D172C6F1B0000A5B4E1 /* Main.storyboard */,
+				E51F0434A15826929E85B8ED /* App */,
+				4D1D46DC1A6F408C1A68B4D3 /* Core */,
+				AD98FA9528EDC9EDE13311AD /* Models */,
+				40392CFF98526FBFF43016E2 /* Persistence */,
+				5F2AD9A6AD4069EFDB46F2BD /* Repositories */,
+				6FD5F1D91E49849D9F6577F4 /* ViewModels */,
+				3280CF8323B6235BF8ECB710 /* Views */,
 				B86B8D342C6F1B0100A5B4E1 /* Assets.xcassets */,
 				B86B8D362C6F1B0100A5B4E1 /* LaunchScreen.storyboard */,
 				B86B8D392C6F1B0100A5B4E1 /* Info.plist */,
 			);
 			path = iosApp;
+			sourceTree = "<group>";
+		};
+		E51F0434A15826929E85B8ED /* App */ = {
+			isa = PBXGroup;
+			children = (
+				20D7C59FB0C423AF79AE2E7A /* AppState.swift */,
+				3C4450338B493602EA72113C /* NoteVaultApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+
+		4D1D46DC1A6F408C1A68B4D3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C2DD45F5160E3F4174322265 /* LocalDiagramGenerator.swift */,
+				24F1429C73191867FC9AB115 /* Color+Theme.swift */,
+				005D79E4CE44F6387FC291DE /* Date+Formatting.swift */,
+				C40AC0BEC6CFAE47B97E9AC6 /* NotificationManager.swift */,
+				8A451AC3B6E61D5FF2A46A99 /* BiometricAuthManager.swift */,
+				38D4C00596265E7CE6DB2A36 /* EncryptionManager.swift */,
+				AC615E30FF3022C332ECBB7F /* KeychainService.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+
+		AD98FA9528EDC9EDE13311AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A137EB38644A02172D04DA1C /* DiagramTemplate.swift */,
+				6BC67ED7012B1E93F9CA6703 /* Folder.swift */,
+				73F388F40E35B195B06DA9D2 /* LogicBoard.swift */,
+				9624E2825A2CEA80B8FF99F0 /* Note.swift */,
+				D496E2C5AF1CF681C97BCA8F /* SecuritySettings.swift */,
+				25910AA7944E4BB0C708C73D /* Tag.swift */,
+				1EC28397117F2B5D2BF174BA /* TaskItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+
+		40392CFF98526FBFF43016E2 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				88AF3F81B381445623DB2C04 /* CoreDataEntities.swift */,
+				250CC146CB514278F0FFABBF /* NoteVaultDAO.swift */,
+				50FBA7E264DE582C654A9F2B /* PersistenceController.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+
+		5F2AD9A6AD4069EFDB46F2BD /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				6C8661061DBF04DBDB4ED8C1 /* FolderRepository.swift */,
+				D9A3AF0D14F1ED53133B5E4B /* LogicBoardRepository.swift */,
+				7A795A6AD5D307BFB4C56909 /* NoteRepository.swift */,
+				B48FE97B1C4511F8DC978385 /* TagRepository.swift */,
+				16A9FE73EE3DCA7525451640 /* TaskRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+
+		6FD5F1D91E49849D9F6577F4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				460444B889FDFCE75C3F01B9 /* FoldersTagsViewModel.swift */,
+				1F6203FE7B7F0C0B0C7F10BE /* LogicBoardViewModel.swift */,
+				5973805E0B5453B1FFA54A98 /* NoteEditorViewModel.swift */,
+				4D22B25D7B6906B41C561CD7 /* NotesListViewModel.swift */,
+				243B8B6451F7AC9797A1C766 /* SearchViewModel.swift */,
+				5BE46B65F367C8295A64D55D /* SecurityViewModel.swift */,
+				D7780C2061558FC478FA0767 /* TasksViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+
+		3280CF8323B6235BF8ECB710 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49D910C2E429B508D928AE6F /* FolderSidebarView.swift */,
+				4DCAB47A3B34BA5C4DCED3DD /* TagCloudView.swift */,
+				F4CA02D80F51A36F88683249 /* DiagramConnectorView.swift */,
+				4D2DFAD6656992ED8263DEEB /* DiagramNodeView.swift */,
+				E97C6709DEBC5EF5A00DC9F3 /* LogicBoardCanvasView.swift */,
+				73700285F38769C44CF58CEA /* TemplatePickerSheet.swift */,
+				992F1BD063ED02A22D8983E3 /* MainNavigationView.swift */,
+				45F9C3E217E07FFD6309BBEB /* NoteCardView.swift */,
+				3F5B7B2CE50DC716DF806144 /* NoteEditorView.swift */,
+				F000279E756628F46C2B48A8 /* NotesListView.swift */,
+				2257E82DBC5786A9808C6894 /* GlobalSearchView.swift */,
+				495EC26CB4BFC184C1BED6A6 /* AppLockView.swift */,
+				AFAC56FD0063552B11333975 /* SettingsView.swift */,
+				D0568CAA607667940A5C0FFD /* TaskRowView.swift */,
+				21A79E3C2F01A224B89F2FE2 /* TasksListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +314,6 @@
 			files = (
 				B86B8D382C6F1B0100A5B4E1 /* LaunchScreen.storyboard in Resources */,
 				B86B8D352C6F1B0100A5B4E1 /* Assets.xcassets in Resources */,
-				B86B8D332C6F1B0000A5B4E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +324,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B86B8D302C6F1B0000A5B4E1 /* ViewController.swift in Sources */,
-				B86B8D2C2C6F1B0000A5B4E1 /* AppDelegate.swift in Sources */,
-				B86B8D2E2C6F1B0000A5B4E1 /* SceneDelegate.swift in Sources */,
+				17F5D883139220E029082BA7 /* AppState.swift in Sources */,
+				BB431ABCB7CDCF08E6CB3A6C /* NoteVaultApp.swift in Sources */,
+				BFAFD76C52F1FFF8937DD86D /* LocalDiagramGenerator.swift in Sources */,
+				96D4F73D24B7AADB40C26E3C /* Color+Theme.swift in Sources */,
+				DA848CB08E0B10A7ECB6AC02 /* Date+Formatting.swift in Sources */,
+				CE33B68C4F590F5D0817D49C /* NotificationManager.swift in Sources */,
+				F9439D28907821B093CD7AF1 /* BiometricAuthManager.swift in Sources */,
+				1EC7B938A0939DAD4BC71B04 /* EncryptionManager.swift in Sources */,
+				1E4276DC243A1A7C99354B21 /* KeychainService.swift in Sources */,
+				E95F661742073FB108B93DB5 /* DiagramTemplate.swift in Sources */,
+				75B1E50EC8901C4CED2D0C42 /* Folder.swift in Sources */,
+				E62E9B7F7A683DC94A382529 /* LogicBoard.swift in Sources */,
+				1B9266443E1D4F92D6F9FF58 /* Note.swift in Sources */,
+				72C2EAB51F6ED8F1CA994BED /* SecuritySettings.swift in Sources */,
+				A9B779838305240B33B81FFB /* Tag.swift in Sources */,
+				5F4A51DC98BC4367797514C0 /* TaskItem.swift in Sources */,
+				30F0067CE78A1F331FA29232 /* CoreDataEntities.swift in Sources */,
+				981DEC1BAAAA9E6C0CAC1F0F /* NoteVaultDAO.swift in Sources */,
+				92D1EBB6722B027380CC21D4 /* PersistenceController.swift in Sources */,
+				FA419F711A54C01F58F5F66F /* FolderRepository.swift in Sources */,
+				2DC8AB798DF5EB91FB31289C /* LogicBoardRepository.swift in Sources */,
+				F633EA0232B73C19CB2AF33B /* NoteRepository.swift in Sources */,
+				A2BA364D8741385F72BE9FEB /* TagRepository.swift in Sources */,
+				AB765E32FE66B3E572819453 /* TaskRepository.swift in Sources */,
+				F07DA6BB2389ED5883EBF59B /* FoldersTagsViewModel.swift in Sources */,
+				01DAD2DA18718B1CDC92C281 /* LogicBoardViewModel.swift in Sources */,
+				F48DECD608623314C65D113A /* NoteEditorViewModel.swift in Sources */,
+				977F02E41DEE435CC72960E1 /* NotesListViewModel.swift in Sources */,
+				B988701421767A14E2126175 /* SearchViewModel.swift in Sources */,
+				13DEE52B1B212839267F8C6F /* SecurityViewModel.swift in Sources */,
+				81399A7F3367058E348BA354 /* TasksViewModel.swift in Sources */,
+				3E7E501DAEEDD87E0EC6E880 /* FolderSidebarView.swift in Sources */,
+				A331B26DE1DAB3ED5248F9B5 /* TagCloudView.swift in Sources */,
+				98C7DA5E5F599554E13E5BD4 /* DiagramConnectorView.swift in Sources */,
+				70307F758C6D82A47154666E /* DiagramNodeView.swift in Sources */,
+				FB5C1A2A6359F6D6DC59DD78 /* LogicBoardCanvasView.swift in Sources */,
+				487F8E966B442C1520A7548A /* TemplatePickerSheet.swift in Sources */,
+				533F465FE03BAA3679A85FE8 /* MainNavigationView.swift in Sources */,
+				A69617CA1A65FF03C37FD44C /* NoteCardView.swift in Sources */,
+				B9761852F1EC51B0306166B8 /* NoteEditorView.swift in Sources */,
+				C1C7A62D7B2645B89A848B66 /* NotesListView.swift in Sources */,
+				0FFF8EE0B81F877C736E4B6B /* GlobalSearchView.swift in Sources */,
+				422D382CD896B2F7CB608EFE /* AppLockView.swift in Sources */,
+				F20BE6A529BCAE6A91F95E98 /* SettingsView.swift in Sources */,
+				5455ABBF19B907BBFB3A9D51 /* TaskRowView.swift in Sources */,
+				23225CA7EAD39E8F820A3566 /* TasksListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B86B8D172C6F1B0000A5B4E1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B86B8D312C6F1B0000A5B4E1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B86B8D362C6F1B0100A5B4E1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -187,7 +409,7 @@
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -208,7 +430,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -232,10 +454,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = NoteVault;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -264,10 +485,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = NoteVault;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
